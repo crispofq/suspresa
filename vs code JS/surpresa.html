@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giulia</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+      color: #333;
+    }
+    button {
+      background-color: #6a5acd;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #483d8b;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #d2691e;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Oi amor! Tenho uma mensagem pra você kkk</h1>
+  <p>Clica no botão ai até aparecer um alerta, apenas lembrando que não é nada complexo kkk estou aprendendo agora 😉</p>
+  <button onclick="addLine()">Clica aqui!</button>
+  <div id="messages"></div>
+  <div id="footer" class="footer"></div>
+  <script>
+    const lines = [
+      "Eu te amo pra sempre gatona!",
+      "Sempre falo e sempre vou falar que a gente é pra sempre!",
+      "Que todas nossas conquistas sejam realizadas um ao lado do outro",
+      "E o mais importante...",
+      "VAI CORINTHIANS kkk"
+    ];
+    let index = 0;
+
+    function addLine() {
+      if (index < lines.length) {
+        const messageDiv = document.getElementById('messages');
+        const newLine = document.createElement('div');
+        newLine.className = 'message';
+        newLine.textContent = lines[index];
+        messageDiv.appendChild(newLine);
+        index++;
+      } else {
+      
+        const footerDiv = document.getElementById('footer');
+        footerDiv.innerHTML = "De: Crispo<br>Para: Giulia 💖";
+        
+      
+        setTimeout(() => {
+          alert("Era só isso kkk te amo 💌");
+        }, 100); 
+      }
+    }
+  </script>
+</body>
+</html>
